@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        form {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: white;
+            
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            
+            padding: 8px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button{
+            background-color: #00ffcc;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+        button:hover {
+            box-shadow: 0 0 20px #00ffcc, 0 0 20px #00ffcc;
+            transform: scale(1.1);
+        }
+        /* button[type="reset"] {
+            background-color: #ff4d4d;
+            box-shadow: 0 0 10px #ff4d4d;
+        }
+        button[type="reset"]:hover {
+            box-shadow: 0 0 10px #ff4d4d, 0 0 40px #ff4d4d;
+        } */
+    </style>
+</head>
+<body>
+
+    <form action="save" method="post">
+       <h2 style="color:green;margin-left: 29%">Update Page</h2>
+        <label>Email:</label>
+        <input type="text" name="id" th:value="${update.id}" readonly="readonly" />
+          <label>Name:</label>
+        <input type="text" name="name" th:value="${update.name}"  />
+          <label>Email:</label>
+        <input type="text" name="email" th:value="${update.email}"  />
+
+        <label>Password:</label>
+        <input type="text" name="password" th:value="${update.password}" />
+
+        <button type="submit">Save</button>
+        <button ><a href="index" style="text-decoration: none ; color: black">Home</a></button>
+    </form>
+
+</body>
+</html>

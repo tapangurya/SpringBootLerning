@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Operation</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            flex-direction: column;
+            color: white;
+        }
+
+        h1 {
+            color: #00ffcc;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 15px rgba(0, 255, 204, 0.5);
+            width: 400px;
+        }
+
+        /* Common Button Styling */
+        .button {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        /* Glowing Buttons in Different Colors */
+        .insert { background: #00cc66; box-shadow: 0 0 10px #00cc66; }
+        .insert:hover { box-shadow: 0 0 20px #00cc66, 0 0 40px #00cc66; transform: scale(1.1); }
+
+        .delete-id { background: #ff4d4d; box-shadow: 0 0 10px #ff4d4d; }
+        .delete-id:hover { box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d; transform: scale(1.1); }
+
+        .delete-all { background: #ffcc00; color: black; box-shadow: 0 0 10px #ffcc00; }
+        .delete-all:hover { box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00; transform: scale(1.1); }
+
+        .find-all { background: #007BFF; box-shadow: 0 0 10px #007BFF; }
+        .find-all:hover { box-shadow: 0 0 20px #007BFF, 0 0 40px #007BFF; transform: scale(1.1); }
+
+        .update { background: #9933ff; box-shadow: 0 0 10px #9933ff; }
+        .update:hover { box-shadow: 0 0 20px #9933ff, 0 0 40px #9933ff; transform: scale(1.1); }
+
+        .find-id { background: #ff66b2; box-shadow: 0 0 10px #ff66b2; }
+        .find-id:hover { box-shadow: 0 0 20px #ff66b2, 0 0 40px #ff66b2; transform: scale(1.1); }
+        
+    </style>
+</head>
+<body>
+    <h1>CRUD Operation</h1>
+    
+    <h2 th:text="${msg}" style="color: red"></h2>
+    
+    <div class="container">
+        <form method="post">
+            <a href="cih" class="button insert">Insert</a>
+            <a href="fetchById" class="button find-id">Find By ID</a>
+            <a href="deletebyid" class="button delete-id">Delete By ID</a>
+            <a href="findAll" class="button find-all">Find All</a>
+            <a href="find" class="button update">Update</a>
+            <a href="dall" class="button delete-all">Delete All</a>
+        </form>
+    </div>
+</body>
+</html>

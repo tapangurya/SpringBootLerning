@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        fieldset {
+            border: 2px solid #007BFF;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form action="fid" method="post">
+        <fieldset>
+            <legend>Login</legend>
+            <p th:text="${errorMessage}" style="color: red"></p>
+            <p th:text="${msg}" style="color: green"></p>
+            <label for="name">Id:</label>
+            <input type="text" id="name" name="id" required> <br><br>
+           
+            <button type="submit">Submit</button>
+            <button> <a href="index" style="text-decoration: none; color: white">Home</a> </button>
+        </fieldset>
+    </form>
+</body>
+</html>
